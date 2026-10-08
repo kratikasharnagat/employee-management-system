@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Directory | PeopleDesk</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="top-nav">
+    <div class="nav-container">
+      <div class="nav-left">
+        <a href="index.html" class="brand-wrapper">
+          <div class="brand-icon">P</div>
+          <div class="brand-text">
+            <span class="brand-title">PEOPLE<span>desk</span></span>
+            <span class="brand-subtitle">Workforce Operations</span>
+          </div>
+        </a>
+
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+
+        <nav>
+          <ul class="nav-links" id="navLinks">
+            <li>
+              <a href="index.html" class="nav-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                Overview
+              </a>
+            </li>
+            <li>
+              <a href="employees.html" class="nav-link active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                Employees
+              </a>
+            </li>
+            <li>
+              <a href="departments.html" class="nav-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                Departments
+              </a>
+            </li>
+            <li>
+              <a href="reports.html" class="nav-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                Reports
+              </a>
+            </li>
+            <li>
+              <a href="settings.html" class="nav-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                Settings
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="nav-right">
+        <div class="global-search-box">
+          <span class="global-search-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </span>
+          <input type="text" class="global-search-input" id="globalSearchInput" placeholder="Quick find employee..." />
+        </div>
+
+        <button class="nav-icon-btn" id="navNotifBtn" title="System Notifications">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+          <span class="nav-badge-dot"></span>
+        </button>
+
+        <a href="settings.html" class="user-profile-badge" title="HR Administrator Settings">
+          <div class="user-avatar-sm">AD</div>
+          <div class="user-info">
+            <span class="user-name" id="navAdminName">Administrator</span>
+            <span class="user-role">HR Operations</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Directory Workspace -->
+  <main class="workspace-wrapper">
+    <div class="page-header">
+      <div class="page-heading-group">
+        <h1>Employee Directory</h1>
+        <p>Manage and review your workforce.</p>
+      </div>
+      <div class="header-actions">
+        <button class="btn btn-primary" id="addEmployeeBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          + Add Employee
+        </button>
+      </div>
+    </div>
+
+    <!-- Multi-Filter Controls Bar -->
+    <section class="filter-bar-card">
+      <div class="filter-controls-row">
+        <!-- Dynamic Search Input -->
+        <div class="search-input-wrapper">
+          <span class="search-icon-inside">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </span>
+          <input type="text" class="table-search-input" id="employeeSearchInput" placeholder="Search employees by ID, name, role, dept, location..." />
+        </div>
+
+        <!-- Department Filter -->
+        <select class="select-control" id="filterDept" aria-label="Filter by Department">
+          <option value="All">All Departments</option>
+        </select>
+
+        <!-- Role Filter -->
+        <select class="select-control" id="filterRole" aria-label="Filter by Job Role">
+          <option value="All">All Job Roles</option>
+        </select>
+
+        <!-- Status Filter -->
+        <select class="select-control" id="filterStatus" aria-label="Filter by Status">
+          <option value="All">All Statuses</option>
+          <option value="Active">Active</option>
+          <option value="On Leave">On Leave</option>
+          <option value="Probation">Probation</option>
+          <option value="Inactive">Inactive</option>
+        </select>
+
+        <!-- Location Filter -->
+        <select class="select-control" id="filterLocation" aria-label="Filter by Location">
+          <option value="All">All Locations</option>
+        </select>
+
+        <!-- Filter Action Reset -->
+        <div class="filter-actions">
+          <button class="btn btn-secondary btn-sm" onclick="clearAllFilters()">
+            Reset
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Corporate Data Table -->
+    <section class="table-container-card" id="employeeTableCard">
+      <div class="table-header-meta">
+        <span id="tableCountBadge" style="font-weight: 600;">Workforce Directory</span>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 12px; color: var(--text-secondary);">Sort by:</span>
+          <select class="select-control" id="filterSort" style="height: 30px; font-size: 12px; min-width: 130px;">
+            <option value="id_desc">Newest First</option>
+            <option value="id_asc">Oldest First</option>
+            <option value="name_asc">Name (A - Z)</option>
+            <option value="name_desc">Name (Z - A)</option>
+            <option value="date_desc">Joining Date (Recent)</option>
+            <option value="date_asc">Joining Date (Earliest)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="table-scroll-wrapper">
+        <table class="corporate-table">
+          <thead>
+            <tr>
+              <th>Employee</th>
+              <th>Employee ID</th>
+              <th>Department</th>
+              <th>Role</th>
+              <th>Location</th>
+              <th>Joining Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="employeeTableBody">
+            <!-- Populated via employees.js -->
+          </tbody>
+        </table>
+      </div>
+
+      <div id="employeeEmptyState" class="empty-state-box" style="display: none;">
+        <!-- Dynamic empty state -->
+      </div>
+    </section>
+  </main>
+
+  <!-- RIGHT-SIDE PROFILE PANEL (DRAWER) -->
+  <div class="drawer-backdrop" id="profileDrawerBackdrop"></div>
+  <aside class="profile-drawer" id="profileDrawer">
+    <div class="drawer-header">
+      <button class="drawer-close-btn" id="closeProfileDrawerBtn" title="Close Panel">&times;</button>
+      <div class="drawer-profile-top">
+        <div id="drawerAvatar"></div>
+        <div class="drawer-profile-info">
+          <h2 class="drawer-profile-name" id="drawerEmpName">Employee Name</h2>
+          <span class="drawer-profile-role" id="drawerEmpTitle">Job Title &bull; Department</span>
+          <div style="display: flex; align-items: center; gap: 8px; margin-top: 6px;">
+            <span class="emp-id-badge" id="drawerEmpId">EMP000</span>
+            <div id="drawerStatusContainer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="drawer-body">
+      <!-- WORK INFORMATION -->
+      <div class="drawer-section">
+        <div class="drawer-section-title">Work Information</div>
+        <div class="drawer-data-grid">
+          <div class="data-item">
+            <span class="data-label">Department</span>
+            <span class="data-value" id="drawerDepartment">—</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Manager</span>
+            <span class="data-value" id="drawerManager">—</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Employment Type</span>
+            <span class="data-value" id="drawerEmploymentType">—</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Joining Date</span>
+            <span class="data-value" id="drawerJoiningDate">—</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="drawer-section">
+        <div class="drawer-section-title">Contact Details</div>
+        <div class="drawer-data-grid">
+          <div class="data-item full-width">
+            <span class="data-label">Work Email</span>
+            <span class="data-value" id="drawerEmail">—</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Phone</span>
+            <span class="data-value" id="drawerPhone">—</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Location / Base</span>
+            <span class="data-value" id="drawerLocation">—</span>
+          </div>
+          <div class="data-item full-width">
+            <span class="data-label">Residential Address</span>
+            <span class="data-value" id="drawerAddress">—</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PERSONAL -->
+      <div class="drawer-section">
+        <div class="drawer-section-title">Personal Information</div>
+        <div class="drawer-data-grid">
+          <div class="data-item">
+            <span class="data-label">Gender</span>
+            <span class="data-value" id="drawerGender">—</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Date of Birth</span>
+            <span class="data-value" id="drawerDob">—</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EMERGENCY CONTACT -->
+      <div class="drawer-section">
+        <div class="drawer-section-title">Emergency Contact</div>
+        <div class="drawer-data-grid">
+          <div class="data-item">
+            <span class="data-label">Contact Name</span>
+            <span class="data-value" id="drawerEmergencyName">—</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Emergency Phone</span>
+            <span class="data-value" id="drawerEmergencyPhone">—</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPENSATION -->
+      <div class="drawer-section">
+        <div class="drawer-section-title">Compensation</div>
+        <div class="drawer-data-grid">
+          <div class="data-item">
+            <span class="data-label">Annual CTC (INR)</span>
+            <span class="data-value" id="drawerSalary">—</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="drawer-footer">
+      <button class="btn btn-secondary btn-sm" id="drawerEditBtn">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+        Edit Employee
+      </button>
+      <button class="btn btn-danger btn-sm" id="drawerDeleteBtn">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+        Delete Employee
+      </button>
+    </div>
+  </aside>
+
+  <!-- ADD / EDIT EMPLOYEE MODAL (2-Column Form) -->
+  <div class="modal-backdrop" id="employeeFormModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" id="formModalTitle">Add New Employee</h3>
+        <button class="modal-close-btn" id="closeFormModalBtn" title="Close">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <form class="corporate-form" id="employeeForm">
+          <!-- PERSONAL SECTION -->
+          <div class="form-section">
+            <div class="form-section-title">Personal</div>
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label">First Name<span class="required">*</span></label>
+                <input type="text" class="form-input" id="formFirstName" placeholder="e.g. Aarav" required />
+                <span class="form-error-feedback"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Last Name<span class="required">*</span></label>
+                <input type="text" class="form-input" id="formLastName" placeholder="e.g. Sharma" required />
+                <span class="form-error-feedback"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Gender</label>
+                <select class="form-select" id="formGender">
+                  <option value="">Select Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Non-Binary">Non-Binary</option>
+                  <option value="Prefer not to say">Prefer not to say</option>
+                </select>
+                <span class="form-error-feedback"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Date of Birth</label>
+                <input type="date" class="form-input" id="formDob" />
+                <span class="form-error-feedback"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- WORK SECTION -->
+          <div class="form-section">
+            <div class="form-section-title">Work Information</div>
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label">Employee ID<span class="required">*</span></label>
+                <input type="text" class="form-input" id="formEmployeeId" placeholder="e.g. EMP009 or RBU-EMP-009" required />
+                <span class="form-help">Unique corporate format (e.g. EMP001, RBU-EMP-001)</span>
+                <span class="form-error-feedback"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Department<span class="required">*</span></label>
+                <select class="form-select" id="formDepartment" required>
+                  <option value="">Select Department</option>
+                  <option value="Human Resources">Human Resources</option>
+                  <option value="Finance">Finance</option>
+                  <option value="Engineering">Engineering</option>
+                  <option value="Information Technology">Information Technology</option>
+                  <option value="Sales">Sales</option>
+                  <option value="Marketing">Marketing</option>
+                  <option value="Operations">Operations</option>
+                  <option value="Customer Support">Customer Support</option>
+                  <option value="Administration">Administration</option>
+                </select>
+                <span class="form-error-feedback"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Job Title<span class="required">*</span></label>
+                <input type="text" class="form-input" id="formJobTitle" placeholder="e.g. Senior Software Engineer" required />
+                <span class="form-error-feedback"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Employment Type<span class="required">*</span></label>
+                <select class="form-select" id="formEmploymentType" required>
+                  <option value="Full Time">Full Time</option>
+                  <option value="Part Time">Part Time</option>
+                  <option value="Contract">Contract</option>
+                  <option value="Intern">Intern</option>
+                  <option value="Temporary">Temporary</option>
+                </select>
+                <span class="form-error-feedback"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Manager / Reporting Lead</label>
+                <input type="text" class="form-input" id="formManager" placeholder="e.g. Vikram Sen" />
+                <span class="form-error-feedback"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Joining Date<span class="required">*</span></label>
+                <input type="date" class="form-input" id="formJoiningDate" required />
+                <span class="form-error-feedback"></span>
+              </div>
+              <div class="form-group col-span-2">
+                <label class="form-label">Base Location</label>
+                <input type="text" class="form-input" id="formLocation" placeholder="e.g. Mumbai, Bengaluru, Pune" />
+                <span class="form-error-feedback"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CONTACT SECTION -->
+          <div class="form-section">
+            <div class="form-section-title">Contact Information</div>
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label">Work Email<span class="required">*</span></label>
+                <input type="email" class="form-input" id="formEmail" placeholder="e.g. first.last@company.com" required />
+                <span class="form-error-feedback"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Phone Number<span class="required">*</span></label>
+                <input type="tel" class="form-input" id="formPhone" placeholder="e.g. +91 98200 12345" required />
+                <span class="form-error-feedback"></span>
+              </div>
+              <div class="form-group col-span-2">
+                <label class="form-label">Residential Address</label>
+                <textarea class="form-textarea" id="formAddress" placeholder="Street, Apt/Suite, City, Pin Code"></textarea>
+                <span class="form-error-feedback"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- EMERGENCY CONTACT SECTION -->
+          <div class="form-section">
+            <div class="form-section-title">Emergency Contact</div>
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label">Emergency Contact Name</label>
+                <input type="text" class="form-input" id="formEmergencyName" placeholder="e.g. Relative or Guardian" />
+                <span class="form-error-feedback"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Emergency Phone</label>
+                <input type="tel" class="form-input" id="formEmergencyPhone" placeholder="e.g. +91 98200 54321" />
+                <span class="form-error-feedback"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- COMPENSATION & STATUS SECTION -->
+          <div class="form-section">
+            <div class="form-section-title">Compensation & Status</div>
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label">Annual Salary (INR)</label>
+                <input type="number" class="form-input" id="formSalary" placeholder="e.g. 1200000" min="0" step="5000" />
+                <span class="form-error-feedback"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Employment Status<span class="required">*</span></label>
+                <select class="form-select" id="formStatus" required>
+                  <option value="Active">Active</option>
+                  <option value="On Leave">On Leave</option>
+                  <option value="Probation">Probation</option>
+                  <option value="Inactive">Inactive</option>
+                </select>
+                <span class="form-error-feedback"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer" style="padding: 16px 0 0 0; background: transparent; border-top: 1px solid var(--border-color);">
+            <button type="button" class="btn btn-secondary" id="cancelFormBtn">Cancel</button>
+            <button type="submit" class="btn btn-primary" id="formSubmitBtn">
+              <span id="formSubmitBtnText">Create Employee</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- DELETE CONFIRMATION MODAL -->
+  <div class="modal-backdrop" id="deleteModalBackdrop">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-header">
+        <h3 class="modal-title" style="color: #DC2626;">Delete Employee?</h3>
+        <button class="modal-close-btn" onclick="closeDeleteModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 12px;">
+          You are about to remove:
+        </p>
+        <div style="background-color: #FEF2F2; border: 1px solid #FECACA; border-radius: var(--radius-sm); padding: 12px; margin-bottom: 14px;">
+          <div style="font-size: 14px; font-weight: 700; color: #991B1B;" id="deleteEmpName">Employee Name</div>
+          <div style="font-size: 12px; font-family: var(--font-mono); color: #B91C1C;" id="deleteEmpCode">EMP000</div>
+        </div>
+        <p style="font-size: 12px; color: var(--text-secondary);">
+          This action cannot be undone. All database records associated with this employee will be deleted permanently.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="cancelDeleteBtn">Cancel</button>
+        <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Delete Employee</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/employees.js"></script>
+  <script src="js/employee-form.js"></script>
+  <script>
+    // Trigger add modal if URL query specifies action=add
+    if (new URLSearchParams(window.location.search).get('action') === 'add') {
+      setTimeout(() => {
+        openAddEmployeeModal();
+      }, 150);
+    }
+  </script>
+</body>
+</html>
